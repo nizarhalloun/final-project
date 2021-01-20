@@ -1,10 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import { Home } from '../pages';
 const App = () => (
   <Router>
     <Switch>
-      <Route exact path="/" component={} />
+      <Route exact path="/" component={Home} />
     </Switch>
   </Router>
 );
