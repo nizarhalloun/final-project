@@ -6,7 +6,7 @@ const NavBarButton = ({ text, path }) => {
   const onClick = () => history.push(path);
 
   return (
-    <button className="navBarButton" onClick={onClick} on>
+    <button className="navBarButton" onClick={onClick}>
       {text}
     </button>
   );
