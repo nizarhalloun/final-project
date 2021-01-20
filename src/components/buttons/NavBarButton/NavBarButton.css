@@ -15,12 +15,10 @@
 }
 
 .navBarButton:hover {
-  cursor: pointer;
   background: #204d57 0% 0% no-repeat padding-box;
 }
 
 .navBarButton:focus {
-  outline: none;
   background: #204d57 0% 0% no-repeat padding-box;
   border-bottom: solid 5px;
 }
