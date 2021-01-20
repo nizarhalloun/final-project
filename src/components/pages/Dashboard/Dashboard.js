@@ -1,3 +1,5 @@
-const Dashboard = () => <div>Dashboard</div>;
+import NavBar from '../../NavBar';
+
+const Dashboard = () => <NavBar />;
 
 export default Dashboard;
