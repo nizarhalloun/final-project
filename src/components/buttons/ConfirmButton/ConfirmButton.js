@@ -1,7 +1,15 @@
 import './ConfirmButton.css';
 
-const ConfirmButton = ({ text }) => {
-  return <button className="confirmButton">{text}</button>;
+const ConfirmButton = ({ text, width }) => {
+  const style = {
+    width,
+  };
+
+  return (
+    <button className="confirmButton" style={style}>
+      {text}
+    </button>
+  );
 };
 
 export default ConfirmButton;
