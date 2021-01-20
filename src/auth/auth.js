@@ -17,3 +17,13 @@ export const makeSignIn = (dbSignIn) => {
     }
   };
 };
+
+export const makeSignOut = (dbSignOut) => {
+  return async (email, password) => {
+    try {
+      await dbSignOut();
+    } catch (e) {
+      throw Error(e.message);
+    }
+  };
+};

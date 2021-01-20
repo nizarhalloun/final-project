@@ -1,10 +1,12 @@
-import { makeSignUp, makeSignIn } from './auth';
+import { makeSignUp, makeSignIn, makeSignOut } from './auth';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-} from '../firebase';
+  signOut as signOutUser,
+} from '../frameworks/firebase';
 
 const signUp = makeSignUp(createUserWithEmailAndPassword);
 const signIn = makeSignIn(signInWithEmailAndPassword);
+const signOut = makeSignOut(signOutUser);
 
-export { signUp, signIn };
+export { signUp, signIn, signOut };
