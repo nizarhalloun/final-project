@@ -4,4 +4,5 @@ export {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
-} from './firebase';
+  onAuthStateChanged,
+} from './auth';
