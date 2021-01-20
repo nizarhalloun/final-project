@@ -1,0 +1,7 @@
+.confirmButton {
+  height: 48px;
+  background: #c7007d 0% 0% no-repeat padding-box;
+  box-shadow: 0px 2px 4px #87005559;
+  border-radius: 24px;
+  opacity: 1;
+}
