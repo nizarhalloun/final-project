@@ -6,9 +6,9 @@ const NavBarButton = ({ text, path }) => {
   const onClick = () => history.push(path);
 
   return (
-    <div className="navBarButton" onClick={onClick}>
+    <button className="navBarButton" onClick={onClick} on>
       {text}
-    </div>
+    </button>
   );
 };
 
