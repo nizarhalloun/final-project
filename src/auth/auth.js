@@ -19,7 +19,7 @@ export const makeSignIn = (dbSignIn) => {
 };
 
 export const makeSignOut = (dbSignOut) => {
-  return async (email, password) => {
+  return async () => {
     try {
       await dbSignOut();
     } catch (e) {
