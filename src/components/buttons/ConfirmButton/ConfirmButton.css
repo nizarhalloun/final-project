@@ -12,3 +12,17 @@
 
   border: none;
 }
+
+.confirmButton:disabled {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 2px 4px #49444759;
+  border: 2px solid #d5d5d7;
+  border-radius: 24px;
+  opacity: 1;
+  border: none;
+
+  text-align: center;
+  font: normal normal bold 16px/24px Rubik;
+  letter-spacing: 0px;
+  color: #000000;
+}

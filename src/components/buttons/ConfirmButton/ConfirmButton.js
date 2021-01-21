@@ -1,12 +1,12 @@
 import './ConfirmButton.css';
 
-const ConfirmButton = ({ text, width }) => {
+const ConfirmButton = ({ text, width, disabled }) => {
   const style = {
     width,
   };
 
   return (
-    <button className="confirmButton" style={style}>
+    <button className="confirmButton" style={style} disabled={disabled}>
       {text}
     </button>
   );
