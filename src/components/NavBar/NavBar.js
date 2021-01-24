@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <div className="navBar">
       <NavBarButton text="הוספת תורים" path="/" />
-      <NavBarButton text="תורים מתוכננים" path="/" />
+      <NavBarButton text="תורים מתוכננים" path="/bookedAppointments" />
       <NavBarButton text="חיפוש משתמשים" path="/" />
       <Logo />
     </div>
