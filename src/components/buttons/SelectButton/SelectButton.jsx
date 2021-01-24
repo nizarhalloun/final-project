@@ -14,27 +14,27 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function SelectButton(props) {
+export default function SelectButton({setData,header,content}) {
     const classes = useStyles();
 
     const handleChange = (event) => {
-        props.setData(event.target.value);
+        setData(event.target.value);
     };
 
     return (
         <div>
             <FormControl row className={classes.formControl}>
-                <InputLabel id="demo-simple-select-label">{props.header}</InputLabel>
+                <InputLabel id="demo-simple-select-label">{header}</InputLabel>
                 <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    value={props.content[0] || "None!"}
+                    value={content[0] || "None!"}
                     onChange={handleChange}
                     className={classes.selectEmpty}
                 >
                     {(() => {
                         const options = [];
-                        for (let elem of props.content) {
+                        for (let elem of content) {
                             options.push(<MenuItem value={elem}>{elem}</MenuItem>);
                         }
                         return options;
