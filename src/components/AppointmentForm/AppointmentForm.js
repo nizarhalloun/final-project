@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ConfirmButton, SelectButton, DateTimeButton } from '../buttons';
 import './AppointmentForm.css';
 
@@ -14,11 +14,11 @@ const hospitalName = [
 const squaresNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const AppointmentForm = () => {
-  const [donation, setDonation] = React.useState('');
-  const [hospital, setHospital] = React.useState('');
-  const [date, setDate] = React.useState('');
-  const [hour, setHour] = React.useState('');
-  const [squares, setSquares] = React.useState('');
+  const [donation, setDonation] = useState('');
+  const [hospital, setHospital] = useState('');
+  const [date, setDate] = useState('');
+  const [hour, setHour] = useState('');
+  const [squares, setSquares] = useState('');
 
   return (
     <div className="appointmentForm">
