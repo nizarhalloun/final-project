@@ -20,40 +20,32 @@ const AppointmentForm = () => {
   const [hour, setHour] = React.useState('');
   const [squares, setSquares] = React.useState('');
 
-  const handleSubmit = () => {};
-
   return (
-    <div>
-      <form row onSubmit={handleSubmit}>
-        <SelectButton
-          header={'תרומת'}
-          content={donationType}
-          setData={setDonation}
-          data={donation}
-        ></SelectButton>
-        <SelectButton
-          header={'בית חולים'}
-          content={hospitalName}
-          setData={setHospital}
-          data={hospital}
-        ></SelectButton>
-        <DateTimeButton
-          header={'תאריך ושעה'}
-          date={date}
-          setDate={setDate}
-          hour={hour}
-          setHour={setHour}
-        ></DateTimeButton>
-        <SelectButton
-          header={'משבצות'}
-          content={squaresNum}
-          setData={setSquares}
-        >
-          {' '}
-          data={squares}
-        </SelectButton>
-        <ConfirmButton text="הוספה" width={112} />
-      </form>
+    <div className="appointmentForm">
+      <SelectButton
+        header={'תרומת'}
+        content={donationType}
+        setData={setDonation}
+        data={donation}
+      ></SelectButton>
+      <SelectButton
+        header={'בית חולים'}
+        content={hospitalName}
+        setData={setHospital}
+        data={hospital}
+      ></SelectButton>
+      <DateTimeButton
+        header={'תאריך ושעה'}
+        date={date}
+        setDate={setDate}
+        hour={hour}
+        setHour={setHour}
+      ></DateTimeButton>
+      <SelectButton header={'משבצות'} content={squaresNum} setData={setSquares}>
+        {' '}
+        data={squares}
+      </SelectButton>
+      <ConfirmButton text="הוספה" width={112} />
     </div>
   );
 };
