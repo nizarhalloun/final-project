@@ -6,7 +6,7 @@ const ConfirmButton = ({ text, width, disabled }) => {
   };
 
   return (
-    <button className="confirmButton" style={style} disabled={disabled}>
+    <button type={"submit"} className="confirmButton" style={style} disabled={disabled}>
       {text}
     </button>
   );
