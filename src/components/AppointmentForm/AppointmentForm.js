@@ -12,9 +12,11 @@ const hospitalName = [
   'סורוקה',
 ];
 const squaresNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const bloodKind = ["לא ידועה", "+A", "-A", "+B", "-B", "+AB"];
+const msgContent = ["הודעת ברירת מחדל", "zichronmenachem@gmail.com הודעת שגיאה "];
 
 const AppointmentForm = () => {
-  const [donation, setDonation] = useState('');
+  const [donation, setDonation] = useState('טרומבוציטים');
   const [hospital, setHospital] = useState('');
   const [date, setDate] = useState('');
   const [hour, setHour] = useState('');
@@ -42,10 +44,19 @@ const AppointmentForm = () => {
         setHour={setHour}
       ></DateTimeButton>
       <SelectButton header={'משבצות'} content={squaresNum} setData={setSquares}>
-        {' '}
         data={squares}
       </SelectButton>
-      <ConfirmButton text="הוספה" width={112} />
+      {donation === "גרנולוציטים" ?
+        <SelectButton header={'תוכן הודעה'} content={msgContent} setData={setSquares}>
+          {' '}
+          data={squares}
+        </SelectButton> : null}
+      {donation === "גרנולוציטים" ?
+        <SelectButton header={'סוג דם'} content={bloodKind} setData={setSquares}>
+          {' '}
+          data={squares}
+        </SelectButton> : null}
+      <ConfirmButton text="הוספה" />
     </div>
   );
 };
