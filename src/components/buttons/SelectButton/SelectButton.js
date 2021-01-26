@@ -1,6 +1,5 @@
 import './SelectButton.css';
-////////////
-import React from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import { InputLabel, MenuItem, FormControl, Select } from '@material-ui/core';
 
@@ -14,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SelectButton({ setData, header, content }) {
+export default function SelectButton({ setData, data, header, content }) {
   const classes = useStyles();
 
   const handleChange = (event) => {
@@ -22,32 +21,21 @@ export default function SelectButton({ setData, header, content }) {
   };
 
   return (
-    <div>
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-label">{header}</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={content[0] || 'None!'}
-          onChange={handleChange}
-          className={classes.selectEmpty}
-        >
-          {(() => {
-            const options = [];
-            for (let elem of content) {
-              options.push(
-                <MenuItem key={elem} value={elem}>
-                  {elem}
-                </MenuItem>
-              );
-            }
-            return options;
-          })()}
-          {/* <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem> */}
-        </Select>
-      </FormControl>
-    </div>
+    <FormControl className={classes.formControl}>
+      <InputLabel id="demo-simple-select-label">{header}</InputLabel>
+      <Select
+        labelId="demo-simple-select-label"
+        id="demo-simple-select"
+        value={data || content[0] || 'None!'}
+        onChange={handleChange}
+        className={classes.selectEmpty}
+      >
+        {content.map((elem) => (
+          <MenuItem key={elem} value={elem}>
+            {elem}
+          </MenuItem>
+        ))}
+      </Select>
+    </FormControl>
   );
 }
