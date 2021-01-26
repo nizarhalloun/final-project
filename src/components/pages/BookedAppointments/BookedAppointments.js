@@ -1,5 +1,6 @@
 import { SelectButton } from '../../buttons';
 import { useState } from 'react';
+import BookedAppointmentsContainer from '../../BookedAppointmentsContainer';
 
 import './BookedAppointments.css';
 const hospitalName = [
@@ -13,13 +14,17 @@ const hospitalName = [
 const BookedAppointments = () => {
   const [hospital, setHospital] = useState('');
   return (
-    <div className="selectButtonContainer">
-      <SelectButton
-        header={'בית חולים'}
-        content={hospitalName}
-        setData={setHospital}
-        data={hospital}
-      />
+    <div>
+      <div className="selectButtonContainer">
+        <SelectButton
+          header={'בית חולים'}
+          content={hospitalName}
+          setData={setHospital}
+          data={hospital}
+        />
+      </div>
+
+      <BookedAppointmentsContainer />
     </div>
   );
 };
