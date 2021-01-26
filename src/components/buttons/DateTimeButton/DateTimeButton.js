@@ -7,6 +7,8 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
+    margin: theme.spacing(1),
+    minWidth: 120
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -15,9 +17,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function DateAndTimePickers({ header }) {
+export default function DateAndTimePickers({ header, date,
+  setDate, hour, setHour }) {
   const classes = useStyles();
-  const handleChange = (event) => {};
+
+  const handleChange = (event) => {
+    let longDate = event.target.value.split("T");
+    setDate(longDate[0]);
+    setHour(longDate[1])
+  };
 
   return (
     <div>
@@ -26,8 +34,8 @@ export default function DateAndTimePickers({ header }) {
           id="datetime-local"
           label={header}
           type="datetime-local"
-          defaultValue="2021-02-24T10:30"
           className={classes.textField}
+          defaultValue="2017-05-24T10:30"
           onChange={handleChange}
           InputLabelProps={{
             shrink: true,

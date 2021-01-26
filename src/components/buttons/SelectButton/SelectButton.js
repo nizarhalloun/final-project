@@ -7,18 +7,18 @@ import { InputLabel, MenuItem, FormControl, Select } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: 90,
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
 }));
 
-export default function SelectButton({ setData, header, content }) {
+export default function SelectButton({ setData, header, content, data }) {
   const classes = useStyles();
-
   const handleChange = (event) => {
     setData(event.target.value);
+    // console.log(data)
   };
 
   return (
@@ -28,7 +28,8 @@ export default function SelectButton({ setData, header, content }) {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={content[0] || 'None!'}
+          value={data}
+          defaultValue=""
           onChange={handleChange}
           className={classes.selectEmpty}
         >
