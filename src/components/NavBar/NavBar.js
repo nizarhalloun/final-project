@@ -5,10 +5,14 @@ import './NavBar.css';
 const NavBar = () => {
   return (
     <div className="navBar">
-      <NavBarButton text="חיפוש משתמשים" path="/" />
-      <NavBarButton text="תורים מתוכננים" path="/bookedAppointments" />
-      <NavBarButton text="הוספת תורים" path="/" />
-      <Logo />
+      <div className="buttons">
+        <NavBarButton text="חיפוש משתמשים" path="/" />
+        <NavBarButton text="תורים מתוכננים" path="/bookedAppointments" />
+        <NavBarButton text="הוספת תורים" path="/" />
+      </div>
+      <div className="logo">
+        <Logo />
+      </div>
     </div>
   );
 };
