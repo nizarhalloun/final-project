@@ -1,4 +1,3 @@
-import React from 'react';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -9,14 +8,13 @@ import Paper from '@material-ui/core/Paper';
 
 import Row from '../Row';
 
-function createData(name, calories, fat, carbs, protein, price) {
+function createData(name, calories, fat, carbs, protein) {
   return {
     name,
     calories,
     fat,
     carbs,
     protein,
-    price,
     history: [
       { date: '2020-01-05', customerId: '11091700', amount: 3 },
       { date: '2020-01-02', customerId: 'Anonymous', amount: 1 },
@@ -37,8 +35,7 @@ const cellStyle = {
   color: '#272932',
   opacity: '1',
 };
-
-export default function CollapsibleTable() {
+const CollapsibleTable = () => {
   return (
     <TableContainer component={Paper}>
       <Table aria-label="collapsible table">
@@ -65,4 +62,6 @@ export default function CollapsibleTable() {
       </Table>
     </TableContainer>
   );
-}
+};
+
+export default CollapsibleTable;

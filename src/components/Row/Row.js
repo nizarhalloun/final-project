@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
@@ -23,13 +23,12 @@ const cellStyle = {
   opacity: '1',
 };
 
-function Row(props) {
-  const { row } = props;
-  const [open, setOpen] = React.useState(false);
+const Row = ({ row }) => {
+  const [open, setOpen] = useState(false);
   const classes = useRowStyles();
 
   return (
-    <React.Fragment>
+    <Fragment>
       <TableRow className={classes.root}>
         <TableCell>
           <IconButton
@@ -52,13 +51,12 @@ function Row(props) {
         </TableCell>
       </TableRow>
       <CollapseRow open={open} history={row.history} />
-    </React.Fragment>
+    </Fragment>
   );
-}
+};
 
 Row.propTypes = {
   row: PropTypes.shape({
-    calories: PropTypes.number.isRequired,
     carbs: PropTypes.number.isRequired,
     fat: PropTypes.number.isRequired,
     history: PropTypes.arrayOf(
@@ -68,8 +66,7 @@ Row.propTypes = {
         date: PropTypes.string.isRequired,
       })
     ).isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+
     protein: PropTypes.number.isRequired,
   }).isRequired,
 };
