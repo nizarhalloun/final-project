@@ -1,6 +1,5 @@
 import './SelectButton.css';
-////////////
-import React from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import { InputLabel, MenuItem, FormControl, Select } from '@material-ui/core';
 
@@ -44,9 +43,6 @@ export default function SelectButton({ setData, header, content, data }) {
             }
             return options;
           })()}
-          {/* <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem> */}
         </Select>
       </FormControl>
     </div>
