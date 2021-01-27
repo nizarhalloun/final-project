@@ -32,6 +32,12 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
 ];
 
+const cellStyle = {
+  font: 'normal normal normal 16px/24px Rubik',
+  color: '#272932',
+  opacity: '1',
+};
+
 export default function CollapsibleTable() {
   return (
     <TableContainer component={Paper}>
@@ -40,9 +46,15 @@ export default function CollapsibleTable() {
           <TableRow>
             <TableCell />
 
-            <TableCell align="right">רשומים</TableCell>
-            <TableCell align="right">מקום</TableCell>
-            <TableCell align="right">שעה</TableCell>
+            <TableCell align="right" style={cellStyle}>
+              רשומים
+            </TableCell>
+            <TableCell align="right" style={cellStyle}>
+              מקום
+            </TableCell>
+            <TableCell align="right" style={cellStyle}>
+              שעה
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

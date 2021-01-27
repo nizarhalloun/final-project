@@ -16,6 +16,13 @@ const useRowStyles = makeStyles({
   },
 });
 
+const cellStyle = {
+  font: 'normal normal bold 16px/24px Rubik',
+  letterSpacing: '0px',
+  color: '#272932',
+  opacity: '1',
+};
+
 function Row(props) {
   const { row } = props;
   const [open, setOpen] = React.useState(false);
@@ -34,9 +41,15 @@ function Row(props) {
           </IconButton>
         </TableCell>
 
-        <TableCell align="right">{row.fat}</TableCell>
-        <TableCell align="right">{row.carbs}</TableCell>
-        <TableCell align="right">{row.protein}</TableCell>
+        <TableCell align="right" style={cellStyle}>
+          {row.fat}
+        </TableCell>
+        <TableCell align="right" style={cellStyle}>
+          {row.carbs}
+        </TableCell>
+        <TableCell align="right" style={cellStyle}>
+          {row.protein}
+        </TableCell>
       </TableRow>
       <CollapseRow open={open} history={row.history} />
     </React.Fragment>
