@@ -1,2 +1,3 @@
 import logo from './logo.svg';
-export { logo };
+import manHoldingBox from './manHoldingBox.svg';
+export { logo, manHoldingBox };
