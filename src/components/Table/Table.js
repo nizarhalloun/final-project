@@ -39,7 +39,7 @@ const CollapsibleTable = () => {
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <Row key={row.name} row={row} />
+            <Row key={row.hour} row={row} />
           ))}
         </TableBody>
       </Table>

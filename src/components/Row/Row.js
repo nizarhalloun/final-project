@@ -64,7 +64,7 @@ Row.propTypes = {
     volunteers: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
-        number: PropTypes.number.isRequired,
+        number: PropTypes.string.isRequired,
         isArrivalConfirmed: PropTypes.bool.isRequired,
       })
     ).isRequired,

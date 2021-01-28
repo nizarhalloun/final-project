@@ -5,8 +5,24 @@ import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
+
+import './CollapseRow.css';
+
+const ArrivalApproved = () => <div className="arrivalApproved">הגעה אושרה</div>;
+const ArrivalDisapproved = () => (
+  <div className="arrivalDisapproved">אין אישור הגעה</div>
+);
+
+const useCellStyles = makeStyles({
+  sizeSmall: {
+    padding: 0,
+  },
+});
 
 const CollapseRow = ({ open, volunteers }) => {
+  const classes = useCellStyles();
+
   return (
     <TableRow>
       <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -15,10 +31,22 @@ const CollapseRow = ({ open, volunteers }) => {
             <Table size="small" aria-label="purchases">
               <TableBody>
                 {volunteers.map(({ name, number, isArrivalConfirmed }) => (
-                  <TableRow key={name}>
-                    <TableCell>{isArrivalConfirmed.toString()}</TableCell>
-                    <TableCell>{number}</TableCell>
-                    <TableCell>{name}</TableCell>
+                  <TableRow key={name} className="tableRow">
+                    <TableCell
+                      className={['tableCell', classes.sizeSmall].join(' ')}
+                    >
+                      {isArrivalConfirmed ? (
+                        <ArrivalApproved />
+                      ) : (
+                        <ArrivalDisapproved />
+                      )}
+                    </TableCell>
+                    <TableCell className="tableCell" align="center">
+                      {number}
+                    </TableCell>
+                    <TableCell className="tableCell" align="right">
+                      {name}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -35,7 +63,7 @@ CollapseRow.propTypes = {
   volunteers: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
-      number: PropTypes.number.isRequired,
+      number: PropTypes.string.isRequired,
       isArrivalConfirmed: PropTypes.bool.isRequired,
     })
   ).isRequired,
