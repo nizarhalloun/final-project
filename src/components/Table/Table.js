@@ -8,19 +8,7 @@ import Paper from '@material-ui/core/Paper';
 
 import Row from '../Row';
 
-function createData(name, calories, fat, carbs, protein) {
-  return {
-    name,
-    calories,
-    fat,
-    carbs,
-    protein,
-    history: [
-      { date: '2020-01-05', customerId: '11091700', amount: 3 },
-      { date: '2020-01-02', customerId: 'Anonymous', amount: 1 },
-    ],
-  };
-}
+import { createData } from './utils';
 
 const rows = [
   createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 3.99),
@@ -35,6 +23,7 @@ const cellStyle = {
   color: '#272932',
   opacity: '1',
 };
+
 const CollapsibleTable = () => {
   return (
     <TableContainer component={Paper}>
