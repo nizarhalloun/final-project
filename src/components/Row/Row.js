@@ -63,9 +63,9 @@ Row.propTypes = {
     numOfBookedAppointments: PropTypes.number.isRequired,
     volunteers: PropTypes.arrayOf(
       PropTypes.shape({
-        amount: PropTypes.number.isRequired,
-        customerId: PropTypes.string.isRequired,
-        date: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        number: PropTypes.number.isRequired,
+        isArrivalConfirmed: PropTypes.bool.isRequired,
       })
     ).isRequired,
   }).isRequired,

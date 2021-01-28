@@ -4,8 +4,7 @@ export const createData = (hour, location, numOfBookedAppointments) => {
     location,
     numOfBookedAppointments,
     volunteers: [
-      { date: '2020-01-05', customerId: '11091700', amount: 3 },
-      { date: '2020-01-02', customerId: 'Anonymous', amount: 1 },
+      { name: 'nizar', number: '052-4554333', isArrivalConfirmed: false },
     ],
   };
 };

@@ -14,11 +14,11 @@ const CollapseRow = ({ open, volunteers }) => {
           <Box margin={1}>
             <Table size="small" aria-label="purchases">
               <TableBody>
-                {volunteers.map((historyRow) => (
-                  <TableRow key={historyRow.date}>
-                    <TableCell>{historyRow.customerId}</TableCell>
-                    <TableCell>{historyRow.amount}</TableCell>
-                    <TableCell>{100}</TableCell>
+                {volunteers.map(({ name, number, isArrivalConfirmed }) => (
+                  <TableRow key={name}>
+                    <TableCell>{isArrivalConfirmed.toString()}</TableCell>
+                    <TableCell>{number}</TableCell>
+                    <TableCell>{name}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -34,9 +34,9 @@ CollapseRow.propTypes = {
   open: PropTypes.bool.isRequired,
   volunteers: PropTypes.arrayOf(
     PropTypes.shape({
-      amount: PropTypes.number.isRequired,
-      customerId: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.number.isRequired,
+      isArrivalConfirmed: PropTypes.bool.isRequired,
     })
   ).isRequired,
 };
