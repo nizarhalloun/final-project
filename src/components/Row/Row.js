@@ -26,6 +26,7 @@ const cellStyle = {
 const Row = ({ row }) => {
   const [open, setOpen] = useState(false);
   const classes = useRowStyles();
+  const { hour, location, numOfBookedAppointments, volunteers } = row;
 
   return (
     <Fragment>
@@ -41,33 +42,32 @@ const Row = ({ row }) => {
         </TableCell>
 
         <TableCell align="right" style={cellStyle}>
-          {row.fat}
+          {numOfBookedAppointments}
         </TableCell>
         <TableCell align="right" style={cellStyle}>
-          {row.carbs}
+          {location}
         </TableCell>
         <TableCell align="right" style={cellStyle}>
-          {row.protein}
+          {hour}
         </TableCell>
       </TableRow>
-      <CollapseRow open={open} history={row.history} />
+      <CollapseRow open={open} volunteers={volunteers} />
     </Fragment>
   );
 };
 
 Row.propTypes = {
   row: PropTypes.shape({
-    carbs: PropTypes.number.isRequired,
-    fat: PropTypes.number.isRequired,
-    history: PropTypes.arrayOf(
+    hour: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    numOfBookedAppointments: PropTypes.number.isRequired,
+    volunteers: PropTypes.arrayOf(
       PropTypes.shape({
         amount: PropTypes.number.isRequired,
         customerId: PropTypes.string.isRequired,
         date: PropTypes.string.isRequired,
       })
     ).isRequired,
-
-    protein: PropTypes.number.isRequired,
   }).isRequired,
 };
 

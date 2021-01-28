@@ -6,7 +6,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 
-const CollapseRow = ({ open, history }) => {
+const CollapseRow = ({ open, volunteers }) => {
   return (
     <TableRow>
       <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -14,7 +14,7 @@ const CollapseRow = ({ open, history }) => {
           <Box margin={1}>
             <Table size="small" aria-label="purchases">
               <TableBody>
-                {history.map((historyRow) => (
+                {volunteers.map((historyRow) => (
                   <TableRow key={historyRow.date}>
                     <TableCell>{historyRow.customerId}</TableCell>
                     <TableCell>{historyRow.amount}</TableCell>
@@ -32,7 +32,7 @@ const CollapseRow = ({ open, history }) => {
 
 CollapseRow.propTypes = {
   open: PropTypes.bool.isRequired,
-  history: PropTypes.arrayOf(
+  volunteers: PropTypes.arrayOf(
     PropTypes.shape({
       amount: PropTypes.number.isRequired,
       customerId: PropTypes.string.isRequired,
