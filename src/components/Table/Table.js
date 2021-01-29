@@ -10,7 +10,7 @@ import Row from '../Row';
 
 import { createData } from './utils';
 
-const rows = [createData('12:00', 'haifa', 4)];
+const rows = [createData('12:00', 'haifa', 4), createData('14:00', 'haifa', 7)];
 
 const cellStyle = {
   font: 'normal normal normal 16px/24px Rubik',
