@@ -7,7 +7,7 @@ const DeleteAppointmentButton = () => {
   return (
     <div className="deleteAppointmentButtonContainer">
       <Button variant="outlined" color="secondary">
-        מחק תור{' '}
+        מחק תור
         <DeleteOutlineOutlinedIcon className="deleteOutlineOutlinedIcon" />
       </Button>
     </div>
