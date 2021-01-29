@@ -26,10 +26,10 @@ const CollapsibleTable = () => {
           <TableRow>
             <TableCell />
 
-            <TableCell align="right" style={cellStyle}>
+            <TableCell align="left" style={cellStyle}>
               רשומים
             </TableCell>
-            <TableCell align="right" style={cellStyle}>
+            <TableCell align="center" style={cellStyle}>
               מקום
             </TableCell>
             <TableCell align="right" style={cellStyle}>

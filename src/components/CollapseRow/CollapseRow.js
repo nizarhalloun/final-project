@@ -7,6 +7,8 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { DeleteAppointmentButton } from '../buttons';
+
 import './CollapseRow.css';
 
 import { getEmptyRows } from './utils';
@@ -67,6 +69,7 @@ const CollapseRow = ({ open, volunteers, numOfBookedAppointments }) => {
               </TableBody>
             </Table>
           </Box>
+          <DeleteAppointmentButton />
         </Collapse>
       </TableCell>
     </TableRow>

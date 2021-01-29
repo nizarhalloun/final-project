@@ -41,10 +41,10 @@ const Row = ({ row }) => {
           </IconButton>
         </TableCell>
 
-        <TableCell align="right" style={cellStyle}>
+        <TableCell align="left" style={cellStyle}>
           {numOfBookedAppointments}
         </TableCell>
-        <TableCell align="right" style={cellStyle}>
+        <TableCell align="center" style={cellStyle}>
           {location}
         </TableCell>
         <TableCell align="right" style={cellStyle}>
