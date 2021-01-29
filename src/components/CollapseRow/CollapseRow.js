@@ -9,7 +9,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import './CollapseRow.css';
 
+import { getEmptyRows } from './utils';
+
 const ArrivalApproved = () => <div className="arrivalApproved">הגעה אושרה</div>;
+
 const ArrivalDisapproved = () => (
   <div className="arrivalDisapproved">אין אישור הגעה</div>
 );
@@ -18,14 +21,24 @@ const useCellStyles = makeStyles({
   sizeSmall: {
     padding: 0,
   },
+  root: {
+    borderSpacing: '0 5px !important',
+    borderCollapse: 'separate !important',
+  },
 });
 
-const CollapseRow = ({ open, volunteers }) => {
+const CollapseRow = ({ open, volunteers, numOfBookedAppointments }) => {
   const classes = useCellStyles();
 
   return (
     <TableRow>
-      <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+      <TableCell
+        style={{
+          paddingBottom: 0,
+          paddingTop: 0,
+        }}
+        colSpan={6}
+      >
         <Collapse in={open} timeout="auto" unmountOnExit>
           <Box margin={1}>
             <Table size="small" aria-label="purchases">
@@ -49,6 +62,8 @@ const CollapseRow = ({ open, volunteers }) => {
                     </TableCell>
                   </TableRow>
                 ))}
+
+                {getEmptyRows(numOfBookedAppointments, volunteers.length)}
               </TableBody>
             </Table>
           </Box>

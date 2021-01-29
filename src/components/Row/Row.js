@@ -51,7 +51,11 @@ const Row = ({ row }) => {
           {hour}
         </TableCell>
       </TableRow>
-      <CollapseRow open={open} volunteers={volunteers} />
+      <CollapseRow
+        open={open}
+        volunteers={volunteers}
+        numOfBookedAppointments={numOfBookedAppointments}
+      />
     </Fragment>
   );
 };

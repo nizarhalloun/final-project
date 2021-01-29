@@ -9,6 +9,10 @@
   padding: 0;
 }
 
+.singleTableCell {
+  width: 100%;
+}
+
 .arrivalApproved {
   width: 70px;
   height: 100%;
